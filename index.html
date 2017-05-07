@@ -73,7 +73,7 @@
                         <li><a href="#services">Dịch vụ</a></li>
                         <li><a href="#pricing">Phí</a></li>
                         <li><a href="#contact">Liên hệ</a></li>
-                        <li><a href="tel:+841225697181"  class="discover-btn"><i class="fa fa-skype" style="margin-right: 8px"></i>01225 69 71 81</a></li>
+                        <li><a href="tel:+841225697181"  class="discover-btn"><i class="pe-7s-phone" style="color: #ffffff"></i>01225 69 71 81</a></li>
                     </ul>
                 </div>
                 <!--end navbar -->
@@ -763,6 +763,12 @@
     <!--end footer -->
 
 
+<div class="contactUs-float" >
+  <a class="lgscreen" href="#" alt="contact us for your next web job">Contact Us</a>
+
+  <a class="smscreen" href="#" alt="contact us for your next web job"><i class="x-icon x-icon-envelope" data-x-icon="" aria-hidden="true"></i></a>
+</div>
+
 <!-- Load JS here for greater good =============================-->
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -774,6 +780,24 @@
 <script src="js/plugins.js"></script>
 <script src="js/custom.js"></script>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1518913618141029',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 </body>
 </html>

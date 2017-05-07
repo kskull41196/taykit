@@ -1699,5 +1699,52 @@ ul.download-list li a i {
 }
 
 
+.contactUs-float {
+    position: fixed;
+    background-color: #25adda;
+    float: right;
+    transform-origin: right top 0;
+    transition: padding 1s ease 0s, background-color .5s ease 0s;
+    transform: rotate(90deg);
+    top: 476px;
+    z-index: 999;
+    right: 0;
+    -webkit-transform-origin: right top 0;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.contactUs-float a {
+    color: white;
+    float: right;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    padding: 15px 20px 16px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.contactUs-float:hover {
+background-color:#1d83a5;
+}
+
+.smscreen {
+  display:none;
+}
+
+@media (max-width: 1050px){
+
+  .lgscreen {
+    display:none;
+  }
+  .smscreen {
+    display:inline !IMPORTANT;
+     -webkit-transform: rotate(270deg) !important;
+    transform: rotate(270deg)!important;
+    padding:15px !important;
+  }
+}
+
 
 
