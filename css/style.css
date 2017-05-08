@@ -1747,10 +1747,10 @@ ul.download-list li a i {
 .contactUs-float a {
     color: white;
     float: right;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 20px;
     letter-spacing: 2px;
-    padding: 15px 20px 16px;
+    padding: 10px 20px 10px;
     text-transform: uppercase;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -1759,22 +1759,16 @@ ul.download-list li a i {
 background-color:#1d83a5;
 }
 
-.smscreen {
-  display:none;
+
+.message-float {
+    position: fixed;
+    float: right;
+    transform-origin: right bottom 0;
+    transition: padding 1s ease 0s, background-color .5s ease 0s;
+    bottom: 0;
+    z-index: 999;
+    right: 0;
+    -webkit-transform-origin: right bottom 0;
 }
-
-@media (max-width: 1050px){
-
-  .lgscreen {
-    display:none;
-  }
-  .smscreen {
-    display:inline !IMPORTANT;
-     -webkit-transform: rotate(270deg) !important;
-    transform: rotate(270deg)!important;
-    padding:15px !important;
-  }
-}
-
 
 
