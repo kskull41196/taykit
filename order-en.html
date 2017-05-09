@@ -20,45 +20,30 @@
 			<fieldset class="row">
 				<h3 class="ribbon">Customer Information</h3>
 				<div class="form-group required"><label for="ApplyName" class="col-sm-4 control-label">Your Full-Name</label><div class="col-sm-8"><input name="data[Apply][name]" placeholder="First Name, Last Name" class="form-control" required="required" maxlength="50" type="text" id="ApplyName"></div></div>
-				<div class="form-group required"><label for="ApplyPhone" class="col-sm-4 control-label">Phone Number in Vietnam</label><div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Phone Number in Vietnam" class="form-control" required="required" maxlength="20" type="tel" id="ApplyPhone"></div></div>
+				<div class="form-group required"><label for="ApplyPhone" class="col-sm-4 control-label">Skype</label><div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Skype" class="form-control" required="required" maxlength="20" type="tel" id="ApplyPhone"></div></div>
+
+
+<div class="form-group required"><label for="ApplyPhone" class="col-sm-4 control-label">Facebook messenger</label><div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Facebook messenger" class="form-control" required="required" maxlength="20" type="tel" id="ApplyPhone"></div></div>
+				
+
+
 				<div class="form-group required"><label for="ApplyEmail" class="col-sm-4 control-label">E-mail Address</label><div class="col-sm-8"><input name="data[Apply][email]" placeholder="E-mail Address" class="form-control" required="required" maxlength="100" type="email" id="ApplyEmail"></div></div>
-				<div class="form-group"><label for="ApplyContractType" class="col-sm-4 control-label">Contract Type</label><div class="col-sm-8"><select name="data[Apply][contract_type]" class="form-control" required="required" id="ApplyContractType">
-<option value="1">Personal</option>
-<option value="2">Corporate</option>
-</select></div></div>
-				<div class="form-group" id="invoice_control" style="display: none;">
-					<label for="ApplyInvoice" class="col-sm-4 control-label">VAT Invoice</label><div class="col-sm-8"><select name="data[Apply][invoice]" class="form-control" required="required" id="ApplyInvoice">
-<option value="0">Unnecessary</option>
-<option value="1">VAT Invoice required</option>
-</select><p><br>If you wish to issue a VAT invoice, we will send you it by post after you return the modem. Please input your organization name, address and tax code properly.</p></div>						<!--<br>VATインボイスご希望のお客様は返却後郵送にて送付いたします。VATインボイス発行の際に正式な組織名、所在地、TAX CODEが必要になりますので、必ずご記入ください。--><p></p>
-				</div>
-				<div class="form-group" id="org_name_control" style="display: none;">
-					<label for="ApplyOrgName" class="col-sm-4 control-label">Organization Name</label><div class="col-sm-8"><input name="data[Apply][org_name]" placeholder="Organization Name" class="form-control" maxlength="100" type="text" id="ApplyOrgName"></div>				</div>
-				<div class="form-group" id="org_address_control" style="display: none;">
-					<label for="ApplyOrgAddress0" class="col-sm-4 control-label">Organization Address</label><div class="col-sm-8"><input name="data[Apply][org_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyOrgAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][org_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyOrgAddress1"></div>				</div>
-				<div class="form-group" id="tax_code_control" style="display: none;">
-					<label for="ApplyTaxCode" class="col-sm-4 control-label">TAX CODE</label><div class="col-sm-8"><input name="data[Apply][tax_code]" placeholder="TAX CODE" class="form-control" maxlength="20" type="text" id="ApplyTaxCode"></div>					<p class="col-sm-8 col-sm-offset-4">Please provide us your organization name and address in <strong>"Vietnamese"</strong>.</p>
-				</div>
+
+
+				<div class="form-group required"><label for="ApplyEmail" class="col-sm-4 control-label">Order</label><div class="col-sm-8"><input name="data[Apply][email]" placeholder="Any information you want to provide us" class="form-control" required="required" maxlength="1000" type="email" id="ApplyEmail"></div></div>
+
+
+				
 			</fieldset>
 			<fieldset class="row">
 				<h3 class="ribbon">Order Information</h3>
-				<div class="form-group required"><label for="ApplyQuantity" class="col-sm-4 control-label">Quantity</label><div class="col-sm-8"><select name="data[Apply][quantity]" class="form-control" required="required" id="ApplyQuantity">
-<option value="1">1 unit</option>
-<option value="2">2 units</option>
-<option value="3">3 units</option>
-<option value="4">4 units</option>
-<option value="5">5 units</option>
-<option value="6">6 units</option>
-<option value="7">7 units</option>
-<option value="8">8 units</option>
-<option value="9">9 units</option>
-<option value="10">10 units</option>
+				<div class="form-group required"><label for="ApplyQuantity" class="col-sm-4 control-label">Type</label><div class="col-sm-8"><select name="data[Apply][quantity]" class="form-control" required="required" id="ApplyQuantity">
+<option value="1">Basic kit</option>
+<option value="2">Silver kit</option>
+<option value="3">Gold kit</option>
 </select></div></div>			
 				<input type="hidden" name="data[Apply][plan]" id="ApplyPlan">
-				<div class="form-group"><label for="ApplyInsuranceFlag" class="col-sm-4 control-label">Insurance Plan (70% Covered)</label><div class="col-sm-8"><select name="data[Apply][insurance_flag]" class="form-control" required="required" id="ApplyInsuranceFlag">
-<option value="0" selected="selected">No Insurance</option>
-<option value="1">Add the Insurance</option>
-</select><p><br>For more information of the insurance plan, please have a look at <a href="https://startelecom.asia/en/vietnam/price/#insurance" target="_blank" ,="" title="StarTelecom‘s Insurance Plan">StarTelecom‘s Insurance Plan</a>. We strongly recommend you that you join the insurance just in case.</p></div></div>					
+								
 				<div class="form-group required"><label for="ApplyStartDate" class="col-sm-4 control-label">Start Date</label><div class="col-sm-8"><input name="data[Apply][start_date]" placeholder="yyyy-mm-dd" class="form-control" required="required" type="text" id="ApplyStartDate"></div></div>				<div id="start_date_control" class="form-group" style="display: none;">
 					<p class="col-sm-8 col-sm-offset-4"></p>
 				</div>
@@ -71,52 +56,29 @@
 				<h3 class="ribbon">Receive &amp; Return Information</h3>
 				<div class="form-group"><label for="ApplyReceiveMethod" class="col-sm-4 control-label">Receive Method</label><div class="col-sm-8"><select name="data[Apply][receive_method]" class="form-control" required="required" id="ApplyReceiveMethod">
 <option value="1">Ho-Chi-MInh Pickup Counter</option>
-<option value="2">Hanoi Pickup Counter</option>
-<option value="3">APEX Vietnam Head Office</option>
 <option value="99">Delivery</option>
 </select></div></div>
 				<div class="form-group" id="address_control" style="display: none;">
 					<label for="ApplyDeliveryArea" class="col-sm-4 control-label">Postal Address</label><div class="col-sm-8"><select name="data[Apply][delivery_area]" class="form-control" id="ApplyDeliveryArea">
 <option value="">-- Choose Delivery Area --</option>
 <option value="1">Ho-Chi-Minh</option>
-<option value="2">Hanoi</option>
-<option value="3">Binh Duong</option>
-<option value="4">Dong Nai</option>
-<option value="5">Long An</option>
-<option value="6">Bac Ninh</option>
-<option value="7">Hung Yen</option>
-<option value="8">Vinh Phuc</option>
-<option value="9">Da Nang</option>
-<option value="0">Other Area</option>
 </select></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][postal_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyPostalAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][postal_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyPostalAddress1"></div>				</div>
 				
 				<div class="form-group"><label for="ApplyReturnMethod" class="col-sm-4 control-label">Return Method</label><div class="col-sm-8"><select name="data[Apply][return_method]" class="form-control" required="required" id="ApplyReturnMethod">
 <option value="1">Ho-Chi-MInh Pickup Counter</option>
-<option value="2">Hanoi Pickup Counter</option>
-<option value="3">APEX Vietnam Head Office</option>
+<option value="3">Via Post office</option>
 <option value="99">Pickup</option>
 </select></div></div>					
 				<div class="form-group" id="return_address" style="display: none;">
 					<label for="ApplyPickupArea" class="col-sm-4 control-label">Pickup Address</label><div class="col-sm-8"><select name="data[Apply][pickup_area]" class="form-control" id="ApplyPickupArea">
 <option value="">-- Choose Pickup Area --</option>
 <option value="1">Ho-Chi-Minh</option>
-<option value="2">Hanoi</option>
-<option value="3">Binh Duong</option>
-<option value="4">Dong Nai</option>
-<option value="5">Long An</option>
-<option value="6">Bac Ninh</option>
-<option value="7">Hung Yen</option>
-<option value="8">Vinh Phuc</option>
-<option value="9">Da Nang</option>
-<option value="0">Other Area</option>
 </select></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][pickup_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyPickupAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][pickup_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyPickupAddress1"></div>									</div>
 			</fieldset>
 			<fieldset class="row">
 				<h3 class="ribbon">Payment Information</h3>
 
 				<div class="form-group"><label for="ApplyPayMethod" class="col-sm-4 control-label">Payment Method</label><div class="col-sm-8"><select name="data[Apply][pay_method]" class="form-control" required="required" id="ApplyPayMethod">
-<option value="1">Bank Transfer (Only available within Vietnam)</option>
-<option value="2">Credit Card (Only available at the office)</option>
 <option value="3">Cash (Only available at the office)</option>
 <option value="99">Cash on Delivery (Only available for delivery)</option>
 </select></div></div>					
@@ -135,14 +97,7 @@
 <option value="5">Diners Club</option>
 <option value="9">Others</option>
 </select></div></div>					<div class="form-group"><label for="ApplyCcNo" class="col-sm-4 control-label">Credit Card Number</label><div class="col-sm-8"><input name="data[Apply][cc_no]" pattern="[0-9]*" maxlength="16" placeholder="Credit Card Number" class="form-control" type="text" id="ApplyCcNo"></div></div>					<div class="form-group"><label for="ApplyCcExpire" class="col-sm-4 control-label">Expiry</label><div class="col-sm-8"><input name="data[Apply][cc_expire]" pattern="[0-9]*" maxlength="4" placeholder="MMYY" class="form-control" type="text" id="ApplyCcExpire"></div></div>					<div class="form-group"><label for="ApplyCcHolder" class="col-sm-4 control-label">Holder Name</label><div class="col-sm-8"><input name="data[Apply][cc_holder]" placeholder="Credit Card Holder Name" class="form-control" maxlength="50" type="text" id="ApplyCcHolder"></div></div>				</div>
-				<div class="form-group" id="pey_method_notice">
-					<div class="col-sm-4">
-					</div>
-					<div class="col-sm-8">
-						<p>Payment method options, “Credit Card“ or “Cash“, are only available for customers who will receive the modem at StarTelecom Ho-Chi-Minh Office.</p>
-						<p>If you wish to pay by “Bank Transfer“, you will be required to complete your payment within 48 hours after you receive the “Book Receipt“.<strong>If you do not complete it by the date required, your order will be canceled.</strong></p>
-					</div>
-				</div>
+				
 				<div class="form-group" id="pey_method_notice">
 					<div class="col-sm-4" style="text-align:right"><strong>About the Deposit</strong>
 					</div>
@@ -161,33 +116,26 @@
 					<div class="body">
 						<p class="calculation-row">
 							<span class="subject">Rental Days</span>
-							<span class="values" id="CalculationDays">0 day(s)<span class="unit">(0 week(s))</span></span>
+							<span class="values" id="CalculationDays">5 day(s)<span class="unit">(0 week(s))</span></span>
 						</p>
 						<p class="calculation-row">
-							<span class="subject">Quantities</span>
-							<span class="values" id="CalculationQuantities">0<span class="unit">unit(s)</span></span>
+							<span class="subject">Type</span>
+							<span class="values" id="CalculationQuantities">Silver kit</span>
 						</p>
 						<p class="calculation-row">
-							<span class="subject">Modem Rental Fee</span>
-							<span class="values" id="CalculationModem"><span class="symbol">VND</span>0<span class="unit"></span></span>
-						</p>
-						<p class="calculation-row">
-							<span class="subject">Insurance</span>
-							<span class="values" id="CalculationInsurance"><span class="symbol">VND</span>0<span class="unit"></span></span>
+							<span class="subject">Rental Fee</span>
+							<span class="values" id="CalculationModem"><span class="symbol">VND</span>1.200.000<span class="unit"></span></span>
 						</p>
 						<p class="calculation-row">
 							<span class="subject">Delivery/Pickup Fee</span>
 							<span class="values" id="CalculationDeliveryPickup"><span class="symbol">VND</span>0<span class="unit"></span></span>
 						</p>
-						<p class="calculation-row">
-							<span class="subject">VAT</span>
-							<span class="values" id="CalculationVat"><span class="symbol">VND</span>0<span class="unit"></span></span>
-						</p>
+						
 					</div>
 					<div class="total">
 						<p class="calculation-row">
 							<span class="subject">Total</span>
-							<span class="values" id="CalculationTotal"><span class="symbol">VND</span>0<span class="unit"></span></span>
+							<span class="values" id="CalculationTotal"><span class="symbol">VND</span>1.200.000<span class="unit"></span></span>
 						</p>
 					</div>
 				</div>
