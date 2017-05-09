@@ -37,6 +37,7 @@ li {
     display: list-item;
     list-style-type: decimal;
     text-align: -webkit-match-parent;
+    margin-left: 15px;
 }
 .black_overlay {
   display: none;
