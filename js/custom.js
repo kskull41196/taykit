@@ -83,7 +83,7 @@ $(window).on('load', function(){
 	/*   SmoothScroll                                             */
 	/* ========================================================== */
 	
-	$(".nav li a, a.scrool").on('click', function(e) {
+	$(".nav li a, a.scrool, .bambi").on('click', function(e) {
 		
 		var full_url = this.href;
 		var parts = full_url.split("#");
