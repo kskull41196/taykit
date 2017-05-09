@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://startelecom.asia/en/vietnam/order -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Taykit - Internet kit for you</title>
+   <link rel="stylesheet" type="text/css" href="./order_css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./order_css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="./order_css/font-awesome.min.css">
+<script async="" src="./order_css/analytics.js"></script><script type="text/javascript" src="./order_css/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./order_css/datepicker.css">
+</head>
+<body class="order pages">
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="pages form">
+<form action="https://startelecom.asia/pages/order" method="post" class="form-horizontal" id="ApplyOrderForm" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div><fieldset>
+<input type="hidden" name="data[Apply][destination]" value="vie" id="ApplyDestination"><input type="hidden" name="data[Apply][language]" value="en" id="ApplyLanguage"><input type="hidden" name="data[Apply][registration_type]" value="1" id="ApplyRegistrationType"></fieldset>
+<div class="container" style="margin-top:50px; margin-bottom:50px;">
+	<div class="row">
+		<div class="col-md-8">
+			<fieldset class="row">
+				<h3 class="ribbon">Customer Information</h3>
+				<div class="form-group required"><label for="ApplyName" class="col-sm-4 control-label">Your Full-Name</label><div class="col-sm-8"><input name="data[Apply][name]" placeholder="First Name, Last Name" class="form-control" required="required" maxlength="50" type="text" id="ApplyName"></div></div>
+				<div class="form-group required"><label for="ApplyPhone" class="col-sm-4 control-label">Phone Number in Vietnam</label><div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Phone Number in Vietnam" class="form-control" required="required" maxlength="20" type="tel" id="ApplyPhone"></div></div>
+				<div class="form-group required"><label for="ApplyEmail" class="col-sm-4 control-label">E-mail Address</label><div class="col-sm-8"><input name="data[Apply][email]" placeholder="E-mail Address" class="form-control" required="required" maxlength="100" type="email" id="ApplyEmail"></div></div>
+				<div class="form-group"><label for="ApplyContractType" class="col-sm-4 control-label">Contract Type</label><div class="col-sm-8"><select name="data[Apply][contract_type]" class="form-control" required="required" id="ApplyContractType">
+<option value="1">Personal</option>
+<option value="2">Corporate</option>
+</select></div></div>
+				<div class="form-group" id="invoice_control" style="display: none;">
+					<label for="ApplyInvoice" class="col-sm-4 control-label">VAT Invoice</label><div class="col-sm-8"><select name="data[Apply][invoice]" class="form-control" required="required" id="ApplyInvoice">
+<option value="0">Unnecessary</option>
+<option value="1">VAT Invoice required</option>
+</select><p><br>If you wish to issue a VAT invoice, we will send you it by post after you return the modem. Please input your organization name, address and tax code properly.</p></div>						<!--<br>VATインボイスご希望のお客様は返却後郵送にて送付いたします。VATインボイス発行の際に正式な組織名、所在地、TAX CODEが必要になりますので、必ずご記入ください。--><p></p>
+				</div>
+				<div class="form-group" id="org_name_control" style="display: none;">
+					<label for="ApplyOrgName" class="col-sm-4 control-label">Organization Name</label><div class="col-sm-8"><input name="data[Apply][org_name]" placeholder="Organization Name" class="form-control" maxlength="100" type="text" id="ApplyOrgName"></div>				</div>
+				<div class="form-group" id="org_address_control" style="display: none;">
+					<label for="ApplyOrgAddress0" class="col-sm-4 control-label">Organization Address</label><div class="col-sm-8"><input name="data[Apply][org_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyOrgAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][org_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyOrgAddress1"></div>				</div>
+				<div class="form-group" id="tax_code_control" style="display: none;">
+					<label for="ApplyTaxCode" class="col-sm-4 control-label">TAX CODE</label><div class="col-sm-8"><input name="data[Apply][tax_code]" placeholder="TAX CODE" class="form-control" maxlength="20" type="text" id="ApplyTaxCode"></div>					<p class="col-sm-8 col-sm-offset-4">Please provide us your organization name and address in <strong>"Vietnamese"</strong>.</p>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<h3 class="ribbon">Order Information</h3>
+				<div class="form-group required"><label for="ApplyQuantity" class="col-sm-4 control-label">Quantity</label><div class="col-sm-8"><select name="data[Apply][quantity]" class="form-control" required="required" id="ApplyQuantity">
+<option value="1">1 unit</option>
+<option value="2">2 units</option>
+<option value="3">3 units</option>
+<option value="4">4 units</option>
+<option value="5">5 units</option>
+<option value="6">6 units</option>
+<option value="7">7 units</option>
+<option value="8">8 units</option>
+<option value="9">9 units</option>
+<option value="10">10 units</option>
+</select></div></div>			
+				<input type="hidden" name="data[Apply][plan]" id="ApplyPlan">
+				<div class="form-group"><label for="ApplyInsuranceFlag" class="col-sm-4 control-label">Insurance Plan (70% Covered)</label><div class="col-sm-8"><select name="data[Apply][insurance_flag]" class="form-control" required="required" id="ApplyInsuranceFlag">
+<option value="0" selected="selected">No Insurance</option>
+<option value="1">Add the Insurance</option>
+</select><p><br>For more information of the insurance plan, please have a look at <a href="https://startelecom.asia/en/vietnam/price/#insurance" target="_blank" ,="" title="StarTelecom‘s Insurance Plan">StarTelecom‘s Insurance Plan</a>. We strongly recommend you that you join the insurance just in case.</p></div></div>					
+				<div class="form-group required"><label for="ApplyStartDate" class="col-sm-4 control-label">Start Date</label><div class="col-sm-8"><input name="data[Apply][start_date]" placeholder="yyyy-mm-dd" class="form-control" required="required" type="text" id="ApplyStartDate"></div></div>				<div id="start_date_control" class="form-group" style="display: none;">
+					<p class="col-sm-8 col-sm-offset-4"></p>
+				</div>
+				
+				<div class="form-group required"><label for="ApplyEndDate" class="col-sm-4 control-label">End Date</label><div class="col-sm-8"><input name="data[Apply][end_date]" placeholder="yyyy-mm-dd" class="form-control" required="required" type="text" id="ApplyEndDate"></div></div>				<div id="end_date_control" class="form-group" style="display: none;">
+					<p class="col-sm-8 col-sm-offset-4"></p>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<h3 class="ribbon">Receive &amp; Return Information</h3>
+				<div class="form-group"><label for="ApplyReceiveMethod" class="col-sm-4 control-label">Receive Method</label><div class="col-sm-8"><select name="data[Apply][receive_method]" class="form-control" required="required" id="ApplyReceiveMethod">
+<option value="1">Ho-Chi-MInh Pickup Counter</option>
+<option value="2">Hanoi Pickup Counter</option>
+<option value="3">APEX Vietnam Head Office</option>
+<option value="99">Delivery</option>
+</select></div></div>
+				<div class="form-group" id="address_control" style="display: none;">
+					<label for="ApplyDeliveryArea" class="col-sm-4 control-label">Postal Address</label><div class="col-sm-8"><select name="data[Apply][delivery_area]" class="form-control" id="ApplyDeliveryArea">
+<option value="">-- Choose Delivery Area --</option>
+<option value="1">Ho-Chi-Minh</option>
+<option value="2">Hanoi</option>
+<option value="3">Binh Duong</option>
+<option value="4">Dong Nai</option>
+<option value="5">Long An</option>
+<option value="6">Bac Ninh</option>
+<option value="7">Hung Yen</option>
+<option value="8">Vinh Phuc</option>
+<option value="9">Da Nang</option>
+<option value="0">Other Area</option>
+</select></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][postal_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyPostalAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][postal_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyPostalAddress1"></div>				</div>
+				
+				<div class="form-group"><label for="ApplyReturnMethod" class="col-sm-4 control-label">Return Method</label><div class="col-sm-8"><select name="data[Apply][return_method]" class="form-control" required="required" id="ApplyReturnMethod">
+<option value="1">Ho-Chi-MInh Pickup Counter</option>
+<option value="2">Hanoi Pickup Counter</option>
+<option value="3">APEX Vietnam Head Office</option>
+<option value="99">Pickup</option>
+</select></div></div>					
+				<div class="form-group" id="return_address" style="display: none;">
+					<label for="ApplyPickupArea" class="col-sm-4 control-label">Pickup Address</label><div class="col-sm-8"><select name="data[Apply][pickup_area]" class="form-control" id="ApplyPickupArea">
+<option value="">-- Choose Pickup Area --</option>
+<option value="1">Ho-Chi-Minh</option>
+<option value="2">Hanoi</option>
+<option value="3">Binh Duong</option>
+<option value="4">Dong Nai</option>
+<option value="5">Long An</option>
+<option value="6">Bac Ninh</option>
+<option value="7">Hung Yen</option>
+<option value="8">Vinh Phuc</option>
+<option value="9">Da Nang</option>
+<option value="0">Other Area</option>
+</select></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][pickup_address][0]" placeholder="Building, Unit Number or Street" class="form-control" type="text" id="ApplyPickupAddress0"></div>					<div class="col-sm-8 col-sm-offset-4"><input name="data[Apply][pickup_address][1]" placeholder="Area, Ward or Province" class="form-control" type="text" id="ApplyPickupAddress1"></div>									</div>
+			</fieldset>
+			<fieldset class="row">
+				<h3 class="ribbon">Payment Information</h3>
+
+				<div class="form-group"><label for="ApplyPayMethod" class="col-sm-4 control-label">Payment Method</label><div class="col-sm-8"><select name="data[Apply][pay_method]" class="form-control" required="required" id="ApplyPayMethod">
+<option value="1">Bank Transfer (Only available within Vietnam)</option>
+<option value="2">Credit Card (Only available at the office)</option>
+<option value="3">Cash (Only available at the office)</option>
+<option value="99">Cash on Delivery (Only available for delivery)</option>
+</select></div></div>					
+				<div id="deposit_method_controll">
+				<div class="form-group"><label for="ApplyDepositMethod" class="col-sm-4 control-label">Deposit Option</label><div class="col-sm-8"><select name="data[Apply][deposit_method]" class="form-control" required="required" id="ApplyDepositMethod">
+<option value="1">by Cash</option>
+</select></div></div>				</div>
+					
+				<div id="credit_card_controll" style="display:none;">
+					<div class="form-group"><label for="ApplyCcType" class="col-sm-4 control-label">Credit Card Type</label><div class="col-sm-8"><select name="data[Apply][cc_type]" class="form-control" id="ApplyCcType">
+<option value="">-</option>
+<option value="1">Visa</option>
+<option value="2">MasterCard</option>
+<option value="3">American Express</option>
+<option value="4">JCB</option>
+<option value="5">Diners Club</option>
+<option value="9">Others</option>
+</select></div></div>					<div class="form-group"><label for="ApplyCcNo" class="col-sm-4 control-label">Credit Card Number</label><div class="col-sm-8"><input name="data[Apply][cc_no]" pattern="[0-9]*" maxlength="16" placeholder="Credit Card Number" class="form-control" type="text" id="ApplyCcNo"></div></div>					<div class="form-group"><label for="ApplyCcExpire" class="col-sm-4 control-label">Expiry</label><div class="col-sm-8"><input name="data[Apply][cc_expire]" pattern="[0-9]*" maxlength="4" placeholder="MMYY" class="form-control" type="text" id="ApplyCcExpire"></div></div>					<div class="form-group"><label for="ApplyCcHolder" class="col-sm-4 control-label">Holder Name</label><div class="col-sm-8"><input name="data[Apply][cc_holder]" placeholder="Credit Card Holder Name" class="form-control" maxlength="50" type="text" id="ApplyCcHolder"></div></div>				</div>
+				<div class="form-group" id="pey_method_notice">
+					<div class="col-sm-4">
+					</div>
+					<div class="col-sm-8">
+						<p>Payment method options, “Credit Card“ or “Cash“, are only available for customers who will receive the modem at StarTelecom Ho-Chi-Minh Office.</p>
+						<p>If you wish to pay by “Bank Transfer“, you will be required to complete your payment within 48 hours after you receive the “Book Receipt“.<strong>If you do not complete it by the date required, your order will be canceled.</strong></p>
+					</div>
+				</div>
+				<div class="form-group" id="pey_method_notice">
+					<div class="col-sm-4" style="text-align:right"><strong>About the Deposit</strong>
+					</div>
+					<div class="col-sm-8">
+						<p>For our security policy, customers will be require to pay the deposit.<br><strong>Deposit: VND 2 million (about US$100)</strong></p>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4" style="position:relative;">
+			<div class="col-md-12" id="CalculationTable">
+				<div class="calculation-table">
+					<div class="ribbon blue">
+						<h3><i class="fa fa-calculator"></i> Prices</h3>
+					</div>
+					<div class="body">
+						<p class="calculation-row">
+							<span class="subject">Rental Days</span>
+							<span class="values" id="CalculationDays">0 day(s)<span class="unit">(0 week(s))</span></span>
+						</p>
+						<p class="calculation-row">
+							<span class="subject">Quantities</span>
+							<span class="values" id="CalculationQuantities">0<span class="unit">unit(s)</span></span>
+						</p>
+						<p class="calculation-row">
+							<span class="subject">Modem Rental Fee</span>
+							<span class="values" id="CalculationModem"><span class="symbol">VND</span>0<span class="unit"></span></span>
+						</p>
+						<p class="calculation-row">
+							<span class="subject">Insurance</span>
+							<span class="values" id="CalculationInsurance"><span class="symbol">VND</span>0<span class="unit"></span></span>
+						</p>
+						<p class="calculation-row">
+							<span class="subject">Delivery/Pickup Fee</span>
+							<span class="values" id="CalculationDeliveryPickup"><span class="symbol">VND</span>0<span class="unit"></span></span>
+						</p>
+						<p class="calculation-row">
+							<span class="subject">VAT</span>
+							<span class="values" id="CalculationVat"><span class="symbol">VND</span>0<span class="unit"></span></span>
+						</p>
+					</div>
+					<div class="total">
+						<p class="calculation-row">
+							<span class="subject">Total</span>
+							<span class="values" id="CalculationTotal"><span class="symbol">VND</span>0<span class="unit"></span></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<fieldset>
+	<div id="Agreement">
+		<h2 id="TermsAndConditionsTitle">Service Terms and Conditions</h2>
+		<div class="row agreement">
+		<div class="container" style="margin-top:50px;">
+<h3 style="color: #0E68B2">I. Scope of Application</h3>
+<ol>
+<li>This regulatory is applicable when mutual commitment is made between user and service provider, Taykit, in communication devices and its additional parts (communication device) rental.</li>
+<li>Time is designated and set in Vietnam, Ho Chi Minh local time.</li>
+</ol>
+<h3 style="color: #0E68B2">II. The composition of rental contract</h3>
+<ol>
+<li>The contract would be made when the regular reservation receipt is sent/received.</li>
+<li>The followings are usually not approvable:
+<ul>
+<li style="list-style-type: circle;">Based on inventory difficulty</li>
+<li style="list-style-type: circle;">Based on violent against contract</li>
+<li style="list-style-type: circle;">Based on out of rental scope</li>
+</ul>
+</li>
+</ol>
+<h3 style="color: #0E68B2">III. Delivery/Pick Up &amp; Return of the devices
+</h3>
+<ol>
+<li>Registration 24/7 with <a href="tel:01225697181">Hotline</a>, delivery time will be from 7AM to 10PM (Ho Chi Minh Time).</li>
+<li>In case you want to return devices when you are away from Ho Chi Minh city, please make devices into a parcel and mail to our office. A filled postal form will be attached when you receive devices.</li>
+<li>Contract end time is defined by the time customer sending returned devices at a post office (base on time of the receipt in the post office).</li>
+<li>User is usually required to ensure all the functions of the devices and report device fault within 48 hours, if no fault report within 48 hours, then Taykit would assume the devices are working properly.</li>
+<li>In case of damage, customer would be required to be responsible for the extra charge/compensation charge, even the devices are damaged while delivery.</li>
+<li>Extra charge would also be required if rental has not been returned in designated due date or any extension of the rental service.</li>
+<li>Taykit&nbsp;will not be responsible for refunding balance in SIMs.</li>
+</ol>
+<h3 style="color: #0E68B2">IV. Duration of Rental</h3>
+<p>Duration of rental will be designated upon users' request.</p>
+<h3 style="color: #0E68B2">V. Alteration of registration information</h3>
+<p>In case of any alteration of user name, address, credit card details, please contact Taykit as soonest as possible.
+</p>
+<h3 style="color: #0E68B2">VI. Extension of rental contract</h3>
+<ol>
+<li>In case of no show on returning day, customer needs to pay for extra using days.</li>
+<li>No deduction would be made although early return.</li>
+</ol>
+<h3 style="color: #0E68B2">VII. Contract Cancellation</h3>
+<ol>
+In case of cancellation, please contact Taykit within 24 hours by <a href="#contact">this form</a>.
+</ol>
+<h3 style="color: #0E68B2">VIII. Rental Fee</h3>
+<ol>
+<li>Rental fee must be paid based on plan and designated fee basing on using hours. Ex: User receives devices at 8.p.m Jan 1st, 2017 and returns at 8.a.m Jan 2nd, 2017. Only 0.5 day rental fee is applied.</li>
+<li>Taykit refunds in 2 cases:
+<ul>
+<li style="list-style-type: circle">User returns in HCMC directly: Taykit refunds by cash.</li>
+<li style="list-style-type: circle">User returns through the post: Taykit refunds via <a href="https://www.westernunion.com/us/en/home.html">Western Union</a> within 3-5 working days. User is responsible for transfer fee.</li>
+</ul>
+</li><li>Extra fee will be charged:
+<ul>
+<li style="list-style-type: circle">Credit for SIMs</li>
+<li style="list-style-type: circle">Transfer money fee.</li>
+</ul>
+</li>
+</ol>
+<h3 style="color: #0E68B2">IX. Payment Method</h3>
+<ol>
+<li>Pay directly when receiving devices.</li>
+<li>Customer only <b>deposits 70%</b> price of devices. Taykit refunds when a contract ended.</li>
+</ol>
+<table class="table table-bordered"><caption>[Price list]</caption>
+<tbody>
+<tr><th>Asus Zenfone Go</th>
+<td>2.990.000₫ (about $130)</td>
+<td><a href="https://www.thegioididong.com/dtdd/asus-zenfone-go-zc500tg">Pricing Reference Link</a></td>
+</tr>
+<tr><th>Iphone 6</th>
+<td>8.990.000đ (about $390.8)</td>
+<td><a href="https://www.thegioididong.com/dtdd/iphone-6-32gb-gold">Pricing Reference Link</a></td>
+</tr>
+<tr><th>Reserve battery</th>
+<td>500.000đ (about $21.7)</td>
+<td><a href="https://www.thegioididong.com/sac-dtdd/pin-sac-du-phong-polymer-10000-mah-esaver-pj-jp82">Pricing Reference Link</a></td>
+</tr>
+<tr><th>iTag, anti-lost alarm</th>
+<td>150.000đ (about $6.5)</td>
+<td><a href="http://www.lazada.vn/thiet-bi-dinh-vi-onex-smart-itag-bluetooth-40-den-1348454.html?offer_id=271&amp;affiliate_id=4799&amp;offer_name=VN+Data-feed_0&amp;affiliate_name=VN+-+Websosanh.vn&amp;transaction_id=1023f9643cbeb43a381b97040f3a1d&amp;aff_source=&amp;key=thiet-bi-dinh-vi-onex-smart-itag-bluetooth-40-Den-1348454.html">Pricing Reference Link</a></td>
+</tr>
+<tr><th>Sim Card</th>
+<td>100.000đ (about $4.3)</td>
+<td></td>
+</tr>
+<tr><th>Cable</th>
+<td>660.000đ (about $28.7)</td>
+<td></td>
+</tr>
+<tr><th>Box</th>
+<td>200.000đ (about $8.7)</td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+<h3 style="color: #0E68B2">X. Management to devices, damage or lost</h3>
+<ol>
+<li>Provide utmost care to the devices as responsibility based on how by Taykit.</li>
+<li>Must ensure all functions of devices and optional parts when return to Taykit.</li>
+<li>In case of malfunction to devices, user must contact Taykit in timely fashion for device exchange at designated spot or even send off for exchange to designated address.</li>
+<li>Would make sure device before device exchange at spot.</li>
+<li>If malfunctioning evokes from the reason by user responsibility, the user would be required to pay for the charge based on the . Or in case of any charge or fee for exchange, would be payable to user.</li>
+<li>No fee will be reimbursed to 2, 3, 4 of X, in terms of rental fees.</li>
+<li>In case, of robbery, damage or lost during rental period, user must also be responsible for the compensation by settling the entire amount of the device price.</li>
+<li>There would not be any reimbursement of device charges to user although stolen devices are found after the payment is settlement.</li>
+</ol>
+<h3 style="color: #0E68B2">XI. Restrictions</h3>
+<ol>
+<li>Prohibition in after-made, restructuring and re-functionalizing of the devices.</li>
+<li>Prohibition in resell, re-rent to third party asides Taykit.</li>
+</ol>
+<h3 style="color: #0E68B2">XII. Fair Usage</h3>
+<ol>
+<li>Massive use of data capacity may lead internet accessing speed limited, lowered or fail to connection without prior notice.</li>
+<li>Taykit will not be responsible for the reason caused by the above mentioned issued and user must pay the rental charge.
+</li>
+</ol>
+<h3 style="color: #0E68B2">XIII. End of Contract</h3>
+<ol>
+<li>Return devices on designated return date, rental contract ends.</li>
+<li>Taykit deserves a right to ban the contract and stop the usage of the device without notice to user, in case user commits the followings:
+<ol>
+<li style="list-style-type: circle">False contents have been made on application</li>
+<li style="list-style-type: circle">Violent against the contract</li>
+<li style="list-style-type: circle">Usage of the device is not in public order.</li>
+</ol>
+</li>
+</ol>
+<h3 style="color: #0E68B2">XIV. Alteration of Contract</h3>
+<p>Taykit deserves a right to have the contract price change without prior notice, and it would be announced over the <a href="http://taykitvn.com/">official webpage</a>.</p>
+<h3 style="color: #0E68B2">XV. Privacy Policy</h3>
+<p>Taykit&nbsp; declares that we will not transmit your data to third parties.</p>
+<h3 style="color: #0E68B2">XVI. Direction of Service Provide</h3>
+<ol>
+<li>User must seek well acknowledge before using Taykit service through any document, website, especially any change of business contents.</li>
+<li>User must bear all obligation towards using service that provided by Taykit. And Taykit would not be obligated to anything no matter what the reason is.</li>
+<li>There would not be any notice to user regarding to fail in connection, that created by disaster.</li>
+</ol>
+<h3 style="color: #0E68B2">XVII. Jurisdiction of the governing law-trial</h3>
+<p>Users will be needed to obligate and respect to the Vietnamese Law in case of litigation with the present Terms of Use and this Agreement has occurred.</p>
+</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-12 checkbox" style="text-align:center">
+				<label for="ApplyAgree" class="control-label">
+					<input type="hidden" name="data[Apply][agree]" id="ApplyAgree_" value="0"><input type="checkbox" name="data[Apply][agree]" value="1" required="required" id="ApplyAgree"> I agree with the service terms and conditions				</label>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row" style="text-align:center">
+		
+		<button id="submit" type="button" name="submit" class="btn btn-primary btn-lg">
+		<span class="glyphicon glyphicon-envelope"></span> Complete Order		</button>
+	</div>
+	</fieldset>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	var getStartDate = "2017-05-09";
+	var returnStartDate = "2017-05-09";
+	jQuery('#ApplyStartDate').datepicker({
+		format: 'yyyy-mm-dd',
+		startDate: getStartDate
+	}).on('changeDate', function(e){
+		jQuery(this).datepicker('hide');
+	});
+	jQuery('#ApplyEndDate').datepicker({
+		format: 'yyyy-mm-dd',
+		startDate: returnStartDate
+	}).on('changeDate', function(e){
+		jQuery(this).datepicker('hide');
+	});
+	jQuery('#ApplyReceiveMethod').change(function(){
+		var method = jQuery(this).val();
+		if(method == 99){
+			jQuery('#address_control').show();
+		}else{
+			jQuery('#address_control').hide();
+		}
+		
+	});
+	jQuery('#ApplyReturnMethod').change(function(){
+		var method = jQuery(this).val();
+		if(method == 99){
+			jQuery('#return_address').show();
+		}else{
+			jQuery('#return_address').hide();
+		}
+	});
+	jQuery('#ApplyContractType').change(function(){
+		var contract_type = jQuery(this).val();
+		if(contract_type == 2){
+			jQuery("#org_name_control, #org_address_control, #invoice_control").show();
+		}else{
+			jQuery("#org_name_control, #org_address_control, #invoice_control").hide();
+		}
+	});
+	jQuery('#ApplyInvoice').change(function(){
+		var invoice_flag = jQuery(this).val();
+		if(invoice_flag == 1){
+			jQuery("#tax_code_control").show();
+		}
+		else{
+			jQuery("#tax_code_control").hide();
+		}
+	});
+	jQuery('#ApplyPayMethod, #ApplyDepositMethod').change(function(){
+		var payment_method = jQuery('#ApplyPayMethod').val();
+		var deposit_method = jQuery('#ApplyDepositMethod').val();
+		
+		if( payment_method == 2){
+			jQuery('#credit_card_controll').show();
+			//jQuery('#deposit_method_controll').hide();
+		}
+		else{
+			jQuery('#deposit_method_controll').show();
+			if( deposit_method == 2){
+				jQuery('#credit_card_controll').show();
+			}
+			else{
+				jQuery('#credit_card_controll').hide();
+			}
+		}
+	});
+	
+	jQuery("#ApplyStartDate").change(function(){
+		if(jQuery(this).val()){
+			jQuery("#start_date_control").show();
+			var start_date = new Date(jQuery(this).val().replace(/\-/g, '/'));
+			//console.log(jQuery(this).val().replace(/\-/g, '/'));
+			var start_date_Y = start_date.getFullYear();
+			var start_date_M = start_date.getMonth();
+			var start_date_D = start_date.getDate();
+			var receive_date = new Date(start_date_Y, start_date_M, start_date_D - 2);
+			var receive_date_Y = receive_date.getFullYear();
+			var receive_date_M = receive_date.getMonth()+1;
+			var receive_date_D = receive_date.getDate();
+			//console.log(receive_date);
+			jQuery("#start_date_control p").html("You can receive the modem from <strong>"+receive_date_Y+"-"+receive_date_M+"-"+receive_date_D+"</strong>.");
+		}else{
+			jQuery("#start_date_control").hide();
+		}
+	});
+	jQuery("#ApplyEndDate").change(function(){
+		if(jQuery(this).val()){
+			jQuery("#end_date_control").show();
+			var end_date = new Date(jQuery(this).val().replace(/\-/g, '/'));
+			var end_date_Y = end_date.getFullYear();
+			var end_date_M = end_date.getMonth();
+			var end_date_D = end_date.getDate();
+			var return_date = new Date(end_date_Y, end_date_M, end_date_D + 2);
+			var return_date_Y = return_date.getFullYear();
+			var return_date_M = return_date.getMonth()+1;
+			var return_date_D = return_date.getDate();
+			//console.log(receive_date);
+			jQuery("#end_date_control p").html("You must return the modem by <strong>"+return_date_Y+"-"+return_date_M+"-"+return_date_D+"</strong>.");
+		}else{
+			jQuery("#end_date_control").hide();
+		}
+	});
+	
+	calculation_position = jQuery("#CalculationTable").offset();
+	calculation_height = jQuery("#CalculationTable").height();
+	nav_bar_height = jQuery(".navbar").outerHeight();
+	jQuery(window).scroll(function(){
+		var calculation_width = jQuery("#CalculationTable").outerWidth();
+		var agreement_position = jQuery("#Agreement").position();
+		if( jQuery(window).width() < 992 ) return;
+		
+		if (jQuery(this).scrollTop() > calculation_position.top - nav_bar_height ){
+			jQuery('#CalculationTable').css({'position': 'fixed', 'top': nav_bar_height+'px','width': calculation_width+'px'});
+			if(jQuery(this).scrollTop() >= agreement_position.top - calculation_height) {
+				var scroll_top = jQuery(this).scrollTop();
+				var top_position = (agreement_position.top - calculation_height + nav_bar_height) - scroll_top;
+				jQuery('#CalculationTable').css({'position': 'fixed', 'top': top_position+'px','width': calculation_width+'px'});
+			}
+		}
+		else {
+			jQuery('#CalculationTable').removeAttr("style");
+		}
+	});
+	
+	jQuery('#ApplyInvoice, #ApplyQuantity, #ApplyInsuranceFlag, #ApplyStartDate, #ApplyEndDate, #ApplyPlan, #ApplyDeliveryArea, #ApplyPickupArea').change(function(){
+		var datastring = $("#ApplyOrderForm").serialize();
+		var start_date = jQuery('#ApplyStartDate').val();
+		var end_date = jQuery('#ApplyEndDate').val();
+		//console.log(datastring);
+		if(!start_date || !end_date) return;
+		jQuery.ajax({
+            url: "/en/vietnam/ajax_calculate_fee",
+            cache: false,
+			dataType: "json",
+			data: datastring,
+			success: function(response, textStatus, jqXHR){
+				//console.log(response);
+				jQuery('#CalculationDays').html(response.CalculationDays);
+				jQuery('#CalculationQuantities').html(response.CalculationQuantities);
+				jQuery('#CalculationModem').html(response.CalculationModem);
+				jQuery('#CalculationInsurance').html(response.CalculationInsurance);
+				jQuery('#CalculationDeliveryPickup').html(response.CalculationDeliveryPickup);
+				jQuery('#CalculationVat').html(response.CalculationVat);
+				jQuery('#CalculationTotal').html(response.CalculationTotal);
+			}
+		});
+	});
+	
+	jQuery("#submit").click(function(e){
+		var datastring = $("#ApplyOrderForm").serialize();
+		jQuery.ajax({
+			url: "/en/vietnam/ajax_before_send",
+			//type: "POST",
+			cache: false,
+			//contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			data: datastring,
+			beforeSend: function(){
+				$("#ApplyOrderForm fieldset").prop('disabled', true);
+				$("#submit").html('<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending');
+				$("div.form-group").removeClass("has-error has-feedback");
+				$("span").remove(".glyphicon-remove");
+			},
+			success: function(response, textStatus, jqXHR){
+				var message = '';
+				//console.log(response.error);
+				if(response.error){
+					jQuery.each(response.error, function(index, value){
+						if(index == 'fixed_cc_fee'
+						|| index == 'fixed_gst'
+						|| index == 'fixed_optional_fee'
+						|| index == 'fixed_rental_fee'
+						|| index == 'fixed_total') return true;
+						
+						message += value + '\n';
+						/*
+						var id_name_array = index.split('_');
+						var id = '';
+						for(var i = 0; i < id_name_array.length; i++){
+							id += id_name_array[i].charAt(0).toUpperCase() + id_name_array[i].slice(1);
+						}
+						*/
+						$("[name^='data[Apply]["+index+"]']").each(function(e){
+							jQuery(this).parent().parent().addClass("has-error has-feedback");
+							jQuery(this).after('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+						});
+					});
+				}
+				if( !message ){
+					$("#submit").html('<span class="glyphicon glyphicon-ok"></span> Sent');
+					if(response.success){
+						var success_message = '';
+						jQuery.each(response.success, function(index, value){
+							success_message += value + '<br>';
+						});
+						$("#submit").after('<p class="bg-success" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+success_message+'</p>');
+					}
+					if(response.fail){
+						var fail_message = '';
+						jQuery.each(response.fail, function(index, value){
+							fail_message += value + '<br>';
+						});
+						$("#submit").after('<p class="bg-danger" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+fail_message+'</p>');
+					}
+				}else{
+					alert(message);
+					$("#ApplyOrderForm fieldset").prop('disabled', false);
+					$("#submit").html('<span class="glyphicon glyphicon-envelope"></span> Complete Order');
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				// log a message to the console
+				var error_text = '';
+				if(textStatus != null){
+					error_text += textStatus+"\n";
+				}
+				if(errorThrown != null){
+					error_text += errorThrown+"\n";
+				}
+				if(error_text != null){
+					console.log(error_text);
+				}
+			},
+			complete: function(jqXHR, textStatus, errorThrown){
+
+			}
+		});
+	});
+});
+<!--
+jQuery(document).ready(function(){
+	jQuery("#InquirySubject").change(function(){
+		var subject = jQuery(this).val();
+		if(subject == 99){
+			jQuery("#inquiry_subject_control").show();
+		}
+		else{
+			jQuery("#inquiry_subject_control").hide();
+		}
+	});
+	jQuery("#submitInquiry").click(function(e){
+		var datastring = $("#InquiryForm").serialize();
+		jQuery.ajax({
+			url: "/en/pages/ajax_inquiry",
+			dataType: "json",
+			data: datastring,
+			beforeSend: function(){
+				$("#InquiryForm fieldset").prop('disabled', true);
+				$("#submitInquiry").html('<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending');
+				$("div.form-group").removeClass("has-error has-feedback");
+				$("span").remove(".glyphicon-remove");
+			},
+			success: function(response, textStatus, jqXHR){
+				var message = '';
+				console.log(response.error);
+				if(response.error){
+					jQuery.each(response.error, function(index, value){
+						message += value + '\n';
+						$("[name^='data[Inquiry]["+index+"]']").each(function(e){
+							jQuery(this).parent().addClass("has-error has-feedback");
+							jQuery(this).after('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+						});
+					});
+				}
+				if( !message ){
+					$("#submitInquiry").html('<span class="glyphicon glyphicon-ok"></span> Sent');
+					if(response.success){
+						var success_message = '';
+						jQuery.each(response.success, function(index, value){
+							success_message += value + '<br>';
+						});
+						$("#submitInquiry").after('<p class="bg-success" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+success_message+'</p>');
+					}
+					if(response.fail){
+						var fail_message = '';
+						jQuery.each(response.fail, function(index, value){
+							fail_message += value + '<br>';
+						});
+						$("#submitInquiry").after('<p class="bg-danger" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+fail_message+'</p>');
+					}
+				}else{
+					alert(message);
+					$("#InquiryForm fieldset").prop('disabled', false);
+					$("#submitInquiry").html('<span class="glyphicon glyphicon-envelope"></span> Submit');
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				// log a message to the console
+				var error_text = '';
+				if(textStatus != null){
+					error_text += textStatus+"\n";
+				}
+				if(errorThrown != null){
+					error_text += errorThrown+"\n";
+				}
+				if(error_text != null){
+					console.log(error_text);
+				}
+			},
+			complete: function(jqXHR, textStatus, errorThrown){
+
+			}
+		});
+	});
+});
+-->
+</script>
+	<script type="text/javascript" src="./order_css/bootstrap.min.js"></script><script type="text/javascript" src="./order_css/ie10-viewport-bug-workaround.js"></script><script type="text/javascript" src="./order_css/bootstrap-datepicker.js"></script>	
+</body></html>

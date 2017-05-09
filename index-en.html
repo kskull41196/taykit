@@ -453,7 +453,7 @@
 					<div class="price">
 											<h3 style="color: #0E68B2">$4<span class="unit">/day</span></h3>
 										</div>
-					<a href="/vi/vietnam/order" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
+					<a href="JavaScript:newPopup('order-en.html');" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
 			</div>
 			<div class="col-sm-4 col-md-4">
 				<div class="plan recommended">
@@ -471,7 +471,7 @@
 					<div class="price">
 											<h3 style="color: #0E68B2">$10<span class="unit">/day</span></h3>
 										</div>
-					<a href="/vi/vietnam/order" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
+					<a href="JavaScript:newPopup('order-en.html');" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
 			</div>
 			<div class="col-sm-4 col-md-4">
 				<div class="plan">
@@ -489,7 +489,7 @@
 					<div class="price">
 											<h3 style="color: #0E68B2">$6<span class="unit">/day</span></h3>
 										</div>
-					<a href="/vi/vietnam/order" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
+					<a href="JavaScript:newPopup('order-en.html');" class="btn btn-primary btn-lg" role="button">Order now</a>				 </div>
 			</div>
 
 			</div>
@@ -1006,7 +1006,10 @@ In case of cancellation, please contact Taykit within 24 hours by <a href="#cont
 <script src="js/custom.js"></script>
 
 <script>
-// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=1000,width=1000%,left=200,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1518913618141029',
