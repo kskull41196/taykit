@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)https://startelecom.asia/en/vietnam/order -->
 <html lang="en">
     <!--<![endif]-->
     <head>
@@ -17,7 +16,7 @@
     <body class="order pages">
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="pages form">
-            <form action="https://startelecom.asia/pages/order" method="post" class="form-horizontal" id="ApplyOrderForm" accept-charset="utf-8">
+            <form action="https://formspree.io/info@taykitvn.com"" method="post" class="form-horizontal" id="ApplyOrderForm" accept-charset="utf-8">
                 <div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
                 <fieldset>
                     <input type="hidden" name="data[Apply][destination]" value="vie" id="ApplyDestination"><input type="hidden" name="data[Apply][language]" value="en" id="ApplyLanguage"><input type="hidden" name="data[Apply][registration_type]" value="1" id="ApplyRegistrationType">
@@ -41,11 +40,11 @@
                                 </div>
                                 <div class="form-group required">
                                     <label for="ApplyEmail" class="col-sm-4 control-label">E-mail Address</label>
-                                    <div class="col-sm-8"><input name="data[Apply][email]" placeholder="E-mail Address. Ex: info@taykitvn.com" class="form-control" required="required" maxlength="100" type="email" id="ApplyEmail"></div>
+                                    <div class="col-sm-8"><input name="_replyto" placeholder="E-mail Address. Ex: info@taykitvn.com" class="form-control" required="required" maxlength="100" type="email" id="ApplyEmail"></div>
                                 </div>
                                 <div class="form-group required">
                                     <label for="ApplyEmail" class="col-sm-4 control-label">Note</label>
-                                    <div class="col-sm-8"><input name="data[Apply][email]" placeholder="Any information you want to provide us" class="form-control" required="required" maxlength="1000" type="email" id="ApplyEmail"></div>
+                                    <div class="col-sm-8"><input name="data[Apply][note]" placeholder="Any information you want to provide us" class="form-control" required="required" maxlength="1000" type="text" id="ApplyNote"></div>
                                 </div>
                                 <div class="form-group required">
                                     <label for="Country" class="col-sm-4 control-label">Country</label>
@@ -729,8 +728,7 @@
                         </div>
                         <hr>
                         <div class="row" style="text-align:center">
-                            <button id="submit" type="button" name="submit" class="btn btn-primary btn-lg">
-                            <span class="glyphicon glyphicon-envelope"></span> Complete Order       </button>
+                             <input type="submit" class="btn btn-primary btn-lg" value="Complete Order">
                         </div>
                     </fieldset>
                 </div>
@@ -793,6 +791,13 @@ var yyyy = today.getFullYear();
                 });
 
                 jQuery('#ReceiveTime').datepicker({
+                    format: 'yyyy-mm-dd',
+                    startDate: getStartDate
+                }).on('changeDate', function(e){
+                    jQuery(this).datepicker('hide');
+                });
+               
+                 jQuery('#ReturnTime').datepicker({
                     format: 'yyyy-mm-dd',
                     startDate: getStartDate
                 }).on('changeDate', function(e){
@@ -956,86 +961,7 @@ var yyyy = today.getFullYear();
                     });
                 });
 
-                jQuery("#submit").click(function(e){
-                    var datastring = $("#ApplyOrderForm").serialize();
-                    jQuery.ajax({
-                        url: "/en/vietnam/ajax_before_send",
-                        //type: "POST",
-                        cache: false,
-                        //contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: datastring,
-                        beforeSend: function(){
-                            $("#ApplyOrderForm fieldset").prop('disabled', true);
-                            $("#submit").html('<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending');
-                            $("div.form-group").removeClass("has-error has-feedback");
-                            $("span").remove(".glyphicon-remove");
-                        },
-                        success: function(response, textStatus, jqXHR){
-                            var message = '';
-                            //console.log(response.error);
-                            if(response.error){
-                                jQuery.each(response.error, function(index, value){
-                                    if(index == 'fixed_cc_fee'
-                                    || index == 'fixed_gst'
-                                    || index == 'fixed_optional_fee'
-                                    || index == 'fixed_rental_fee'
-                                    || index == 'fixed_total') return true;
-
-                                    message += value + '\n';
-                                    /*
-                                    var id_name_array = index.split('_');
-                                    var id = '';
-                                    for(var i = 0; i < id_name_array.length; i++){
-                                        id += id_name_array[i].charAt(0).toUpperCase() + id_name_array[i].slice(1);
-                                    }
-                                    */
-                                    $("[name^='data[Apply]["+index+"]']").each(function(e){
-                                        jQuery(this).parent().parent().addClass("has-error has-feedback");
-                                        jQuery(this).after('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
-                                    });
-                                });
-                            }
-                            if( !message ){
-                                $("#submit").html('<span class="glyphicon glyphicon-ok"></span> Sent');
-                                if(response.success){
-                                    var success_message = '';
-                                    jQuery.each(response.success, function(index, value){
-                                        success_message += value + '<br>';
-                                    });
-                                    $("#submit").after('<p class="bg-success" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+success_message+'</p>');
-                                }
-                                if(response.fail){
-                                    var fail_message = '';
-                                    jQuery.each(response.fail, function(index, value){
-                                        fail_message += value + '<br>';
-                                    });
-                                    $("#submit").after('<p class="bg-danger" style="text-align:center; font-size:150%; padding:20px; margin:10px;">'+fail_message+'</p>');
-                                }
-                            }else{
-                                alert(message);
-                                $("#ApplyOrderForm fieldset").prop('disabled', false);
-                                $("#submit").html('<span class="glyphicon glyphicon-envelope"></span> Complete Order');
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown){
-                            // log a message to the console
-                            var error_text = '';
-                            if(textStatus != null){
-                                error_text += textStatus+"\n";
-                            }
-                            if(errorThrown != null){
-                                error_text += errorThrown+"\n";
-                            }
-                            if(error_text != null){
-                                console.log(error_text);
-                            }
-                        },
-                        complete: function(jqXHR, textStatus, errorThrown){
-
-                        }
-                    });
-                });
+              
             });
             <!--
             jQuery(document).ready(function(){
