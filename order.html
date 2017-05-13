@@ -733,15 +733,33 @@
                         </div>
                         <hr>
                         <div class="row" style="text-align:center">
-                             <input type="submit" class="btn btn-primary btn-lg" value="Complete Order">
+                                    <button id="submit" type="submit" name="submit" class="btn btn-primary btn-lg">Complete Order </div>
                         </div>
                     </fieldset>
                 </div>
             </form>
         </div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
         <script type="text/javascript">
             function completeAndSubmit(){
-                var quantityabc = jQuery('#ApplyQuantity').val();
+                $("#ApplyOrderForm fieldset").prop('disabled', true);
+                $("#submit").html('<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending');
+                $("div.form-group").removeClass("has-error has-feedback");
+
+                 var htmlContentMinify = "<!DOCTYPE html><html> <head> <title></title> </head> <body> <div class='information' style='max-width: 700px;'> <div class='form-group'> <div class='cus-info'> <div class='table-responsive' style='min-height: .01%; overflow-x: auto;'> <table class='table' style='border-spacing: 0; border-collapse: collapse;background-color: transparent; width: 100%; max-width: 100%; margin-bottom: 20px;'> <tbody> <tr> <td style='padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; text-align: center; background: #F0464D; color: #fff; text-transform: uppercase; font-weight: bold;' colspan='2'>Customer Information</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>1. Full name</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyName').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>2. Skype</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplySkype').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>3. Facebook</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyFacebook').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>4. Email</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyEmail').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>5. Note</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyNote').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>6. Country</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#Country option:selected').text() + "</td></tr></tbody><tbody> <tr> <td style='padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; text-align: center; background: #F0464D; color: #fff; text-transform: uppercase; font-weight: bold;' colspan='2'>Order Information</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>1. Type</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyQuantity option:selected').text() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>2. Start Date</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyStartDate').val() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>3. End Date</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyEndDate').val() + "</td></tr></tbody> <tbody> <tr> <td style='padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; text-align: center; background: #F0464D; color: #fff; text-transform: uppercase; font-weight: bold;' colspan='2'>Receive/Return Information</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>1. Receive Method</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyReceiveMethod option:selected').text() + "</br> - Postal address: " + jQuery('#ApplyPostalAddress0').val() + ", " + jQuery('#ApplyPostalAddress1').val() + ", HCMC</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>3. Receive Time</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ReceiveTime').val() + "; " + jQuery('#ReceiveTimePicker option:selected').text() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>4. Return Method</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ApplyReturnMethod option:selected').text() + " - Postal address: " + jQuery('#ApplyPickupAddress0').val() + ", " + jQuery('#ApplyPickupAddress1').val() + ", HCMC</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>6. Return Time</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#ReturnTime').val() + "; " + jQuery('#ReturnTimePicker option:selected').text()+"</td></tr></tbody> <tbody> <tr> <td style='padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; text-align: center; background: #0E68B2; color: #fff; text-transform: uppercase; font-weight: bold;' colspan='2'>Prices</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>1. Rental Days</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#totalDate').html() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>2. Type</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#CalculationQuantities').html() + "</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>3. Rental Fee</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + numberWithCommas(jQuery('#ApplyQuantity').val() * 23000) + "VND/day</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>4. Deposit</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>"+jQuery('#DepositAmountVND').html()+"</td></tr><tr> <td style='width: 30%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd; font-weight: bold;'>5. Total</td><td style='width: 70%; padding: 8px; line-height: 1.42857143; vertical-align: top; border-top: 1px solid #ddd;'>" + jQuery('#totalMount2').html() + "VND</td></tr></tbody> </table> </div></div></div></div></body></html>";
+
                 var messageContent = "---- Customer Information ----\n"
                     +"1. Full name: " + jQuery('#ApplyName').val() + "\n"
                     +"2. Skype: " + jQuery('#ApplySkype').val() + "\n"
@@ -770,6 +788,35 @@
                     +"3. Rental fee: " + numberWithCommas(jQuery('#ApplyQuantity').val() * 23000) + "VND/day\n"
                     +"4. Total: " + jQuery('#totalMount2').html() + "VND\n";
                 console.log(messageContent);
+
+                $.ajax({
+                type: 'POST',
+                url: 'http://fwdbrand.com/sendmailtaykit.php',
+                data: {
+                    "name": "Taykit customer",
+                    "mailto": "info@taykitvn.com",
+                    "title": "ORDER TAYKIT SERVICE",
+                    "content": htmlContentMinify
+                }
+                }).done(function(res){
+                    var obj = JSON.parse(res);
+                    var messageLa = "";
+                    console.log("error: " + obj.error);
+                    if(obj.error == false){
+                        console.log("success");
+                        $("#ApplyOrderForm fieldset").prop('disabled', false);
+                        $("#submit").prop('disabled', true);
+                        $("#submit").html('<span class="glyphicon glyphicon-ok"></span> Sent');
+                        messageLa = "Ordered successfully! We will contact you to confirm your order within 24 hours";
+                    }else{
+                        console.log("failed");
+                        messageLa = "Ordered failed, something went wrong! Please email us directly via info@taykitvn.com. We are so sorry for this inconvenient.";
+                    }
+
+                     $('#myModal .modal-body').html('<div class="alert alert-'+(obj.error == false ? 'success' : 'danger')+'" role="alert">'+messageLa+'</div>');
+                     $('#myModal').modal('show');
+                })
+
             }
 
             function numberWithCommas(x) {
@@ -810,6 +857,12 @@
                      jQuery('#totalMount3').html(parseFloat(Math.round((totalMount / 23000) * 100) / 100).toFixed(totalMount==0?0:2));
             }
             jQuery(document).ready(function(){
+                    $('#myModal').on('hidden.bs.modal', function (e) {
+            $('#myModal .modal-body').html('');
+        })
+
+
+
                 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
