@@ -16,7 +16,7 @@
     <body class="order pages">
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="pages form">
-            <form action="https://formspree.io/info@taykitvn.com"" method="post" class="form-horizontal" id="ApplyOrderForm" accept-charset="utf-8">
+            <form action="javascript:completeAndSubmit();" class="form-horizontal" id="ApplyOrderForm" accept-charset="utf-8">
                 <div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
                 <fieldset>
                     <input type="hidden" name="data[Apply][destination]" value="vie" id="ApplyDestination"><input type="hidden" name="data[Apply][language]" value="en" id="ApplyLanguage"><input type="hidden" name="data[Apply][registration_type]" value="1" id="ApplyRegistrationType">
@@ -32,11 +32,11 @@
                                 </div>
                                 <div class="form-group required">
                                     <label for="ApplyPhone" class="col-sm-4 control-label">Skype</label>
-                                    <div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Skype. Ex: john1978.la" class="form-control"  maxlength="100" type="tel" id="ApplyPhone"></div>
+                                    <div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Skype. Ex: john1978.la" class="form-control"  maxlength="100" type="tel" id="ApplySkype"></div>
                                 </div>
                                 <div class="form-group required">
                                     <label for="ApplyPhone" class="col-sm-4 control-label">Facebook link</label>
-                                    <div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Facebook link. Ex: https://www.facebook.com/Taykit-295519664204211/" class="form-control" maxlength="100" type="tel" id="ApplyPhone"></div>
+                                    <div class="col-sm-8"><input name="data[Apply][phone]" placeholder="Facebook link. Ex: https://www.facebook.com/Taykit-295519664204211/" class="form-control" maxlength="100" type="tel" id="ApplyFacebook"></div>
                                 </div>
                                 <div class="form-group required">
                                     <label for="ApplyEmail" class="col-sm-4 control-label">E-mail Address</label>
@@ -349,7 +349,6 @@
                                     <label for="ApplyDeliveryArea" class="col-sm-4 control-label">Postal Address</label>
                                     <div class="col-sm-8">
                                         <select name="data[Apply][delivery_area]" class="form-control" id="ApplyDeliveryArea">
-                                            <option value="">-- Choose Delivery Area --</option>
                                             <option value="1">Ho-Chi-Minh</option>
                                         </select>
                                     </div>
@@ -404,8 +403,7 @@
                                     <div class="col-sm-8">
                                         <select name="data[Apply][return_method]" class="form-control" required="required" id="ApplyReturnMethod">
                                             <option value="99">Pickup</option>
-                                            <option value="1">Ho-Chi-MInh Pickup Counter</option>
-                                            <option value="3">Via Post office</option>
+                                            <option value="1">Ho-Chi-Minh Pickup Counter</option>
                                         </select>
                                     </div>
                                 </div>
@@ -416,7 +414,6 @@
                                     <label for="ApplyPickupArea" class="col-sm-4 control-label">Pickup Address</label>
                                     <div class="col-sm-8">
                                         <select name="data[Apply][pickup_area]" class="form-control" id="ApplyPickupArea">
-                                            <option value="">-- Choose Pickup Area --</option>
                                             <option value="1">Ho-Chi-Minh</option>
                                         </select>
                                     </div>
@@ -473,7 +470,6 @@
                                     <label for="ApplyPayMethod" class="col-sm-4 control-label">Payment Method</label>
                                     <div class="col-sm-8">
                                         <select name="data[Apply][pay_method]" class="form-control" required="required" id="ApplyPayMethod">
-                                            <option value="3">Cash (Only available at the office)</option>
                                             <option value="99">Cash on Delivery (Only available for delivery)</option>
                                         </select>
                                     </div>
@@ -542,7 +538,7 @@
                                         </p>
                                         <p class="calculation-row">
                                             <span class="subject">Rental Fee</span>
-                                            <span class="values" id="CalculationModem"><span class="symbol">VND</span><span id="totalMount">0</span><span class="unit"></span></span>
+                                            <span class="values" id="CalculationFee"><span class="symbol">VND</span><span id="totalMount">0</span><span class="unit"></span></span>
                                         </p>
                                     </div>
                                         <p class="calculation-row">
@@ -552,7 +548,16 @@
                                     <div class="total">
                                         <p class="calculation-row" style="padding-bottom: 40px">
                                             <span class="subject">Total</span>
-                                            <span class="values" id="CalculationTotal" style="font-size: 100%;"><span class="symbol">VND</span><span id="totalMount2">0<span class="unit"></span></span></span>
+                                            <span class="values" id="CalculationTotal" style="font-size: 100%;">
+                                                <span class="symbol">VND</span>
+                                                    <span id="totalMount2">
+                                                    </span>
+                                                        <span style='font-size:60%'>
+                                                            </br>(about $                                                        
+                                                            <span style="margin-left: -3px" id="totalMount3">0</span>
+                                                            <span style="margin-left: -3px">)</span>
+                                                        </span>
+
                                         </p>
                                     </div>
                                     <div><b><i>
@@ -728,13 +733,45 @@
                         </div>
                         <hr>
                         <div class="row" style="text-align:center">
-                             <input type="submit" class="btn btn-primary btn-lg" style="position: fixed;z-index: 999; bottom: 10px;left: 50%; -webkit-transform: translate(-50%, 0); " value="Complete Order">
+                             <input type="submit" class="btn btn-primary btn-lg" value="Complete Order">
                         </div>
                     </fieldset>
                 </div>
             </form>
         </div>
         <script type="text/javascript">
+            function completeAndSubmit(){
+                var quantityabc = jQuery('#ApplyQuantity').val();
+                var messageContent = "---- Customer Information ----\n"
+                    +"1. Full name: " + jQuery('#ApplyName').val() + "\n"
+                    +"2. Skype: " + jQuery('#ApplySkype').val() + "\n"
+                    +"3. Facebook: " + jQuery('#ApplyFacebook').val() + "\n"
+                    +"4. Email: " + jQuery('#ApplyEmail').val() + "\n"
+                    +"5. Note: " + jQuery('#ApplyNote').val() + "\n"
+                    +"6. Country: " + jQuery('#Country option:selected').text() + "\n"
+
+                    +"\n---- Order Information ----\n"
+                    +"1. Type: " + jQuery('#ApplyQuantity option:selected').text() + "\n"
+                    +"2. StartDate: " + jQuery('#ApplyStartDate').val() + "\n"
+                    +"3. EndDate: " + jQuery('#ApplyEndDate').val() + "\n"
+
+                    +"\n---- Receive/Return Information ----\n"
+                    +"1. Receive Method: " + jQuery('#ApplyReceiveMethod option:selected').text() + "\n - Postal address: " + jQuery('#ApplyPostalAddress0').val() + ", " + jQuery('#ApplyPostalAddress1').val() + ", HCMC\n"
+                    +"2. ReceiveTime: " + jQuery('#ApplyName').val() + "; " + jQuery('#ApplyName').val() + "\n"
+                    +"3. Return Method: " + jQuery('#ApplyReturnMethod option:selected').text() + "\n - Postal address: " + jQuery('#ApplyPickupAddress0').val() + ", " + jQuery('#ApplyPickupAddress1').val() + ", HCMC\n"
+                    +"4. ReturnTime: " + jQuery('#ReturnTime').val() + "\n"
+
+                    +"\n---- Deposit ----\n"
+                    + jQuery('#DepositAmountVND').html()+"\n"
+
+                    +"\n---- Price ----\n"
+                    +"1. Rental days: " + jQuery('#totalDate').html() + "\n"
+                    +"2. Type: " + jQuery('#CalculationQuantities').html() + "\n"
+                    +"3. Rental fee: " + numberWithCommas(jQuery('#ApplyQuantity').val() * 23000) + "VND/day\n"
+                    +"4. Total: " + jQuery('#totalMount2').html() + "VND\n";
+                console.log(messageContent);
+            }
+
             function numberWithCommas(x) {
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             }
@@ -758,7 +795,7 @@
                     }
                     depositHTML = "Deposit: " + numberWithCommas(depositVND) + "VND ";
                     html = html.split('-')[0];
-                        jQuery('#CalculationModem').html("<span class='symbol'>VND</span>"+numberWithCommas(23000*quantity) + "/day");
+                        jQuery('#CalculationFee').html("<span class='symbol'>VND</span>"+numberWithCommas(23000*quantity) + "/day");
                 jQuery('#CalculationQuantities').html(html);
                 jQuery('#DepositAmountVND').html(depositHTML);
                 jQuery('#DepositAmountUSD').html(parseFloat(Math.round((depositVND / 23000) * 100) / 100).toFixed(2));
@@ -767,11 +804,10 @@
                     jQuery('#totalDate').html(totalDate + ' day(s)');
                  } else {
                     jQuery('#totalDate').html('0 day(s)');
-                    jQuery('#totalMount').html('0');
                     totalMount = 0;
                 }
-                     jQuery('#totalMount2').html(numberWithCommas(totalMount) + "<span style='font-size:60%'></br>(about $"+(parseFloat(Math.round((totalMount / 23000) * 100) / 100).toFixed(totalMount==0?0:2))+")<span>");
-               
+                     jQuery('#totalMount2').html(numberWithCommas(totalMount));
+                     jQuery('#totalMount3').html(parseFloat(Math.round((totalMount / 23000) * 100) / 100).toFixed(totalMount==0?0:2));
             }
             jQuery(document).ready(function(){
                 var today = new Date();
@@ -952,7 +988,7 @@ var yyyy = today.getFullYear();
                             //console.log(response);
                             jQuery('#CalculationDays').html(response.CalculationDays);
                             jQuery('#CalculationQuantities').html(response.CalculationQuantities);
-                            jQuery('#CalculationModem').html(response.CalculationModem);
+                            jQuery('#CalculationFee').html(response.CalculationFee);
                             jQuery('#CalculationInsurance').html(response.CalculationInsurance);
                             jQuery('#CalculationDeliveryPickup').html(response.CalculationDeliveryPickup);
                             jQuery('#CalculationVat').html(response.CalculationVat);
